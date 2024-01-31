@@ -38,3 +38,8 @@ app.post("/submit", (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+
+// nodemon .\index4.js 
+// open localhost:3001 in your browser
+// summit
