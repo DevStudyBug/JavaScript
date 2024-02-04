@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 app.post("/check", (req, res) => {
   if (userIsAuthorised) {
-    res.sendFile(__dirname + "/public/secret.html");
+    res.sendFile(__dirname + "/public/secret.html"); // sendFile is static file (file that dont change)
   } else {
     res.sendFile(__dirname + "/public/index.html");
     //Alternatively res.redirect("/");
