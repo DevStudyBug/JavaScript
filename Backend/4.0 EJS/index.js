@@ -1,12 +1,19 @@
 import express from "express";
-const app = express();
-const port = 3001;
 
-app.get("/",(req,res)=>{
-    const today = new Data();
-    const day = today.getDay();
-//console.log(day);
-let type = "a weekday";
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+  const today = new Date();
+  //Test code
+  // weekend:
+  // new Date("June 24, 2023 11:13:00");
+  // weekday:
+  // new Date("June 20, 2023 11:13:00");
+  const day = today.getDay();
+
+  // console.log(day);
+  let type = "a weekday";
   let adv = "it's time to work hard";
 
   if (day === 0 || day === 6) {
@@ -14,14 +21,14 @@ let type = "a weekday";
     adv = "it's time to have some fun";
   }
 
-  res.render("solution.ejs", {
+  res.render("soltion.ejs", {
     dayType: type,
     advice: adv,
   });
 });
 
-app.listen( port , ()=>{
-    console.log(`server running on ${port}` )
+app.listen(port, () => {
+  console.log(`Server running on port ${port}.`);
 });
 
 

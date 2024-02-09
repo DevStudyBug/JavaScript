@@ -18,3 +18,4 @@ app.listen(port, () => {
 
 // goto current directory
 // npm i [it install requier node modules]
+// RUN ==>> nodemon index.js 
