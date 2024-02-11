@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Chat Bot</title>
+    <style>
+        #chat-container {
+            width: 300px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        #user-input {
+            width: 70%;
+            padding: 5px;
+        }
+
+        #send-button {
+            width: 28%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            displayMessage("Bot", "Hello! I'm a virtual chatbot. How can I assist you?");
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            displayMessage("User", userInput);
+
+            var botResponse = generateBotResponse(userInput);
+
+            displayMessage("Bot", botResponse);
+
+            document.getElementById('user-input').value = "";
+        }
+
+        function displayMessage(sender, message) {
+            var chatContainer = document.getElementById('chat');
+            var messageElement = document.createElement('p');
+            messageElement.textContent = sender + ": " + message;
+            chatContainer.appendChild(messageElement);
+
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function generateBotResponse(userInput) {
+            // Check for specific queries
+            if (userInput.toLowerCase().includes("created you")) {
+                return "Bot: Hello! Anshika Dubey created this virtual chatbot.";
+            } else if (userInput.toLowerCase().includes("contact")) {
+                return "Bot: You can contact Anshika Dubey via Gmail: anshikadubey_ce_2021@ltce.in or phone number: 8591245402.";
+            } else if (userInput.toLowerCase().includes("anshika")) {
+                return "Bot: Anshika Dubey is a third-year student pursuing B.Tech in Computer Engineering.";
+            } else {
+                // For other inputs, provide a default response.
+                return "Bot: I'm a simple bot. You said: " + userInput;
+            }
+        }
+    </script>
+</body>
+</html>

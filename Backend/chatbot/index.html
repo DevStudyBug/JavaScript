@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Chat Bot</title>
+    <style>
+        #chat-container {
+            width: 300px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        #user-input {
+            width: 70%;
+            padding: 5px;
+        }
+
+        #send-button {
+            width: 28%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add an initial greeting
+            displayMessage("Bot", "Hello! How can I help you today?");
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            displayMessage("User", userInput);
+
+            // Process the user's input (you can replace this with more advanced logic)
+            var botResponse = generateBotResponse(userInput);
+
+            displayMessage("Bot", botResponse);
+
+            // Clear the input field
+            document.getElementById('user-input').value = "";
+        }
+
+        function displayMessage(sender, message) {
+            var chatContainer = document.getElementById('chat');
+            var messageElement = document.createElement('p');
+            messageElement.textContent = sender + ": " + message;
+            chatContainer.appendChild(messageElement);
+
+            // Scroll to the bottom to show the latest message
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function generateBotResponse(userInput) {
+            // Replace this with more sophisticated logic using NLP or other techniques
+            return "I'm a simple bot. You said: " + userInput;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Chat Bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #chat-container {
+            width: 300px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 400px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #user-input {
+            width: 70%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        #send-button {
+            width: 70%;
+            padding: 8px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #send-button:hover {
+            background-color: #2980b9;
+        }
+
+        #chat {
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        #social-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+        <div id="social-links">
+            <a href="https://www.linkedin.com/in/anshika-dubey-44a5ab254/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Anshikadubeyy" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/918591245402" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:anshikadubey_ce_2021@ltce.in" target="_blank" class="social-icon"><i class="far fa-envelope"></i></a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            displayMessage("Bot", "Hello! I'm Ash, a virtual chatbot. How can I assist you?");
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            displayMessage("User", userInput);
+
+            var botResponse = generateBotResponse(userInput);
+
+            displayMessage("Bot", botResponse);
+
+            document.getElementById('user-input').value = "";
+        }
+
+        function displayMessage(sender, message) {
+            var chatContainer = document.getElementById('chat');
+            var messageElement = document.createElement('p');
+            messageElement.textContent = sender + ": " + message;
+            chatContainer.appendChild(messageElement);
+
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function generateBotResponse(userInput) {
+            // Check for specific queries related to Anshika's resume
+            if (userInput.toLowerCase().includes("created you")) {
+                return "Hello! I'm Ash, a virtual chatbot created by Anshika Dubey.";
+            } else if (userInput.toLowerCase().includes("contact")) {
+                return "You can contact Anshika Dubey via Gmail: anshikadubey_ce_2021@ltce.in or WhatsApp: 8591245402.";
+            } else if (userInput.toLowerCase().includes("anshika")) {
+                return "Anshika Dubey is a third-year computer engineering student with expertise in HTML, DBMS, CSS, Canva, Flutter, and Python. She has a CGPA of 9.1 and actively participates in various extracurricular activities. You can reach her at anshikadubey_ce_2021@ltce.in.";
+            } else if (userInput.toLowerCase().includes("education")) {
+                return "Anshika Dubey is pursuing Bachelor of Computer Engineering at Lokmanya Tilak College of Engineering with a CGPA of 9.1.";
+            } else if (userInput.toLowerCase().includes("skills")) {
+                return "Anshika Dubey has expertise in HTML (90%), DBMS (90%), CSS (80%), Canva (80%), Flutter (50%), and Python.";
+            } else if (userInput.toLowerCase().includes("experience")) {
+                return "Anshika Dubey has experience as a Campus Ambassador for DevTown, worked on the E Shram project in Mumbai, and participated in the IBM Skill-Build internships on front-end development and data analytics.";
+            } else if (userInput.toLowerCase().includes("achievements")) {
+                return "Anshika Dubey's achievements include being the Editor in Chief at CESA-2023, Coordinator of the Music, Dance, and Drama Club, and a Flutter full-stack developer at YCF. She has also received certificates from Google, Microsoft, IBM, and participated in events like Flipkart GRiD 5.0 and Smart India Hackathon.";
+            } else {
+                // For other inputs, provide a default response.
+                return "I'm a simple bot. You said: " + userInput;
+            }
+        }
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
