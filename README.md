@@ -1,5 +1,4 @@
 # Web Development
-
 ========================
 ## Main Topics Covered
 JavaScript
