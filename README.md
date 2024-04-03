@@ -1,6 +1,6 @@
 # Web Development
-========================
-## Main Topics Covered
+
+### Main Topics Covered
 JavaScript
 Bootstrap 4
 DOM & DOM Manipulation
@@ -12,8 +12,8 @@ body-parser
 request
 nodemon
 EJS
-========================
-## Web Dev Course Resources
+
+### Web Dev Course Resources
 https://www.appbrewery.co/p/web-development-course-resources/
 
 
