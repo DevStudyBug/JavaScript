@@ -12,27 +12,22 @@ while(i<5){            //condition
 **/
 
 //fizzbuzz challenge -using control statement--------------
-var output =[] ;
-var count =1;
-function fizzbuzz(){
-    while(count<=100){
-    if (count%3===0 && count%5===0)
-    {
-        output.push("fizzbuzz");
-       
+var output = [];
+var count = 1;
+function fizzbuzz() {
+  while (count <= 100) {
+    if (count % 3 === 0 && count % 5 === 0) {
+      output.push("fizzbuzz");
+    } else if (count % 3 === 0) {
+      output.push("fizz");
+    } else if (count % 5 === 0) {
+      output.push("buzz");
+    } else {
+      output.push(count);
     }
-    else if (count%3===0){
-         output.push("fizz");
-    }
-    else if(count%5===0){
-         output.push("buzz");
-    }
-    else{
-         output.push(count);  
-    } 
-   count++;
-}
-   console.log(output);
+    count++;
+  }
+  console.log(output);
 }
 
 // Controle statement ---- FOR LOOP----------------------/
@@ -49,24 +44,19 @@ function fizzbuzz(){
  }
  
  ********/
- var output =[] ;
- var count =1;
- function fizzbuzz(){
-     for( var count =100;count>1; count-- ){
-     if (count%3===0 && count%5===0)
-     {
-         output.push("fizzbuzz");
-        
-     }
-     else if (count%3===0){
-          output.push("fizz");
-     }
-     else if(count%5===0){
-          output.push("buzz");
-     }
-     else{
-          output.push(count);  
-     } 
- }
-    console.log(output);
- }
+var output = [];
+var count = 1;
+function fizzbuzz() {
+  for (var count = 100; count > 1; count--) {
+    if (count % 3 === 0 && count % 5 === 0) {
+      output.push("fizzbuzz");
+    } else if (count % 3 === 0) {
+      output.push("fizz");
+    } else if (count % 5 === 0) {
+      output.push("buzz");
+    } else {
+      output.push(count);
+    }
+  }
+  console.log(output);
+}

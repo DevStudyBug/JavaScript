@@ -1,0 +1,16 @@
+"Where the ISS at?" REST API Documentation 
+Real-time ISS location 
+A site for tracking the location of and getting fly-over notifications for the International Space Station.
+https://wheretheiss.at/w/developer
+
+Example Resource URL
+https://api.wheretheiss.at/v1/satellites/25544
+
+open Postman
+paste url get the location
+
+Example Response
+{"name":"iss","id":25544,"latitude":44.68885430596,"longitude":44.722804605318,"altitude":418.85641247676,"velocity":27601.38911751,"visibility":"daylight","footprint":4501.640818613,"timestamp":1712136104,"daynum":2460403.8900926,"solar_lat":5.5676295882776,"solar_lon":40.358307437098,"units":"kilometers"}
+
+copy latitude and longitude 
+open google map search this and get live location of ISS
