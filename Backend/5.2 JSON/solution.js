@@ -36,3 +36,7 @@ app.post("/recipe", (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
+
+// to run ----------
+// npm i 
+// nodemon solution
